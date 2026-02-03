@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background: linear-gradient(to bottom, #ff9a9e, #fecfef); 
+            height: 100vh; 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        h1 { color: #d63384; font-size: 2.5em; margin-bottom: 20px; }
+        button { 
+            padding: 15px 30px; 
+            margin: 10px; 
+            font-size: 1.2em; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+        }
+        #yes { background: #28a745; color: white; }
+        #no { background: #dc3545; color: white; position: relative; }
+        #message { display: none; font-size: 1.5em; color: #28a745; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+    <div id="message">Your best decision ever! ❤️💕😍</div>
+
+    <script>
+        const noBtn = document.getElementById('no');
+        const yesBtn = document.getElementById('yes');
+        const message = document.getElementById('message');
+
+        noBtn.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - 100;
+            const maxY = window.innerHeight - 100;
+            noBtn.style.left = Math.random() * maxX + 'px';
+            noBtn.style.top = Math.random() * maxY + 'px';
+        });
+
+        yesBtn.addEventListener('click', () => {
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+            message.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
